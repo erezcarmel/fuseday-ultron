@@ -45,7 +45,7 @@ export default class Landing extends React.Component {
 	}
 
 	clickHandler(id) {
-		submitAnswer(id, { seconds: this.state.seconds })
+		submitAnswer(id, localStorage.getItem('quiz_id') ,{ seconds: this.state.seconds })
 			.then(response => {
 				// next question
 			});
