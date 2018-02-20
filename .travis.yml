@@ -1,9 +1,10 @@
 sudo: required
 
-cache: yarn
 language: node_js
 node_js:
   - "node"
+
+cache: yarn
 
 before_install:
   - sudo apt install jq
