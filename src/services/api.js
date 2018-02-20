@@ -17,8 +17,8 @@ export const createGame = data =>
 export const getNextQuestion = quizId =>
   fetchJson(origin + `/dev/games/${quizId}/next`)
 
-export const submitAnswer = (questionId, data) =>
-  fetch(origin + `/dev/games/question/${questionId}/submit`, {
+export const submitAnswer = (questionId, quizId, data) =>
+  fetch(origin + `/dev/games/${quizId}/question/${questionId}/submit`, {
     method: 'POST', // or 'PUT'
     body: JSON.stringify(data), 
     headers
