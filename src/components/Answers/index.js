@@ -9,10 +9,10 @@ class Answers extends Component {
 		return (
 			<Grid container className="answers" justify="center">
 				{
-					Object.keys(this.props.options).map(item =>
+					Object.keys(this.props.options).map((item, index) =>
 						<Grid key={item.text} item>
-							<Button variant="raised" color="default" size="large" className="answer-btn" onClick={this.props.onClick}>
-								{ item.text }
+							<Button variant="raised" color="default" size="large" className="answer-btn" onClick={e => this.props.onClick(item)}>
+								{ item[index].text }
 							</Button>
 						</Grid>
 					)

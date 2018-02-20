@@ -29,8 +29,8 @@ export default class Landing extends React.Component {
 		clearInterval(this.interval);
 	}
 
-	clickHandler(e) {
-		submitAnswer(e.target.textContent, { seconds: this.state.seconds })
+	clickHandler(id) {
+		submitAnswer(id, { seconds: this.state.seconds })
 			.then(response => {
 				// next question
 			});
