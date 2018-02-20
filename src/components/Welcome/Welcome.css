@@ -6,4 +6,7 @@
     min-width: 300px;
     min-height: 200px;
     font-size: 20px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
 }

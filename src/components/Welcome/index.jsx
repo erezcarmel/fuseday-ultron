@@ -12,7 +12,7 @@ class Welcome extends Component {
 					variant="raised"
 					color="secondary"
 					size="large"
-					href="/quiz"
+					// href="#/quiz"
 					className="start-btn"
 					onClick={this.props.onClick}
 				>
