@@ -15,10 +15,10 @@ jobs:
     - stage: build
       before_install:
         - echo "install dependencies"
-      install: npm install
+      install: yarn install
       before_script:
         - echo "building package"
-      script: yarn build
+      script: npm run-script build
       deploy:
         skip_cleanup: true
         provider: s3
