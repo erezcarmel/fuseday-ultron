@@ -1,4 +1,4 @@
-const origin = window.location.origin
+const origin = 'https://29qqwwcte5.execute-api.ap-northeast-2.amazonaws.com' //window.location.origin
 
 const headers = new Headers({
   'Content-Type': 'application/json',
