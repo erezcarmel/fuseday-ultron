@@ -11,6 +11,9 @@ export default class Landing extends React.Component {
 	}
 
 	render() {
+		const { isAuthenticated } = this.props.auth;
+    console.log(isAuthenticated())
+    if (!isAuthenticated()) return <div>Please login</div>
 		return (
 			<div>
 				<History/>
