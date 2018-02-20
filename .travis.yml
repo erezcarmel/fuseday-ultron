@@ -6,17 +6,16 @@ node_js:
 
 before_install:
   - sudo apt install jq
-  - sudo apt install yarn
 
-# env:
-#   - BUILD_VERSION="$(cat package.json | jq -r '.version')-${TRAVIS_BUILD_NUMBER}"
-#
-# jobs:
-#   include:
-#     - stage: build
-#       before_install:
-#         - echo "install dependencies"
-#       install: yarn install
+env:
+  - BUILD_VERSION="$(cat package.json | jq -r '.version')-${TRAVIS_BUILD_NUMBER}"
+
+jobs:
+  include:
+    - stage: build
+      before_install:
+        - echo "install dependencies"
+      install: yarn install
 #       before_script:
 #         - echo "building package"
 #       script: yarn build
