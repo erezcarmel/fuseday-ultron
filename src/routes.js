@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Router } from 'react-router-dom';
+import { Route, HashRouter } from 'react-router-dom';
 import App from './App';
 import Home from './Home/Home';
 import Callback from './Callback/Callback';
@@ -18,7 +18,7 @@ const handleAuthentication = ({location}) => {
 
 export const makeMainRoutes = () => {
   return (
-      <Router history={history}>
+      <HashRouter hashType="slash">
         <div>
           <Route path="/" render={(props) => <App auth={auth} {...props} />} />
           {/* <Route path="/home" render={(props) => <Home auth={auth} {...props} />} /> */}
@@ -29,6 +29,6 @@ export const makeMainRoutes = () => {
             return <Callback {...props} /> 
           }}/>
         </div>
-      </Router>
+      </HashRouter>
   );
 }
