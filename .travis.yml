@@ -15,7 +15,7 @@ jobs:
     - stage: build
       before_install:
         - echo "install dependencies"
-      install: yarn install
+      install: npm install
 #       before_script:
 #         - echo "building package"
 #       script: yarn build
