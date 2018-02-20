@@ -1,3 +1,9 @@
 .welcome {
 
 }
+
+.welcome .start-btn {
+    min-width: 300px;
+    min-height: 200px;
+    font-size: 20px;
+}

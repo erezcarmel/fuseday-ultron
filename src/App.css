@@ -1,3 +1,12 @@
 .btn-margin {
   margin: 7px 3px;
 }
+
+.landing .history {
+  float: left;
+  min-width: 150px;
+}
+
+.landing .welcome {
+  float: left;
+}
