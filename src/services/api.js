@@ -2,7 +2,7 @@ const origin = 'https://29qqwwcte5.execute-api.ap-northeast-2.amazonaws.com' //w
 
 const headers = new Headers({
   'Content-Type': 'application/json',
-  'x-access-token': localStorage.getItem('access_token')
+  'Authorization': localStorage.getItem('access_token')
 })
 
 const fetchJson = url => fetch(url, {headers}).then(res => res.json())
