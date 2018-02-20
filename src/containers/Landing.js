@@ -31,7 +31,8 @@ export default class Landing extends React.Component {
 		createGame()
 			.then(id => {
 				localStorage.setItem('quiz_id', id);
-			});
+			})
+			.then(() => this.props.history.replace(`/quiz`));
 	}
 
 	render() {
