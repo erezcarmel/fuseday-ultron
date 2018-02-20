@@ -8,7 +8,14 @@ class Welcome extends Component {
 	render() {
 		return (
 			<Grid container className="welcome" justify="center">
-				<Button variant="raised" color="secondary" size="large" href="/quiz" className="start-btn">
+				<Button
+					variant="raised"
+					color="secondary"
+					size="large"
+					href="/quiz"
+					className="start-btn"
+					onClick={this.props.onClick}
+				>
 					Start Quiz
 				</Button>
 			</Grid>

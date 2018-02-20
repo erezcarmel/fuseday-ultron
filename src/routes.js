@@ -3,7 +3,6 @@ import { Route, HashRouter } from 'react-router-dom';
 import App from './App';
 import Callback from './Callback/Callback';
 import Auth from './Auth/Auth';
-import history from './history';
 import Landing from './containers/Landing'
 import Quiz from './containers/Quiz'
 

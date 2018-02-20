@@ -4,15 +4,23 @@ import Grid from 'material-ui/Grid';
 
 import './Answers.css';
 
+const COLORS = ['deepOrange', 'green', 'lightBlue', 'red', 'purple', 'yellow'];
+
 class Answers extends Component {
 	render() {
 		return (
 			<Grid container className="answers" justify="center">
 				{
-					this.props.options.map(item =>
+					Object.keys(this.props.options).map((item, index) =>
 						<Grid key={item.text} item>
-							<Button variant="raised" color="default" size="large" className="answer-btn" onClick={this.props.onClick}>
-								{ item.text }
+							<Button
+								variant="raised"
+								color={COLORS[index]}
+								size="large"
+								className="answer-btn"
+								onClick={e => this.props.onClick(item)}
+							>
+								{ item[index].text }
 							</Button>
 						</Grid>
 					)

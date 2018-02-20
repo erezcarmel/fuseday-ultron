@@ -1,4 +1,4 @@
-const origin = windows.location.origin
+const origin = window.location.origin
 
 const headers = new Headers({
   'Content-Type': 'application/json',

@@ -1,5 +1,35 @@
+body {
+  height: 100%;
+  width: 100%;
+}
+
+#root, #root > div:first-child {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+.navbar-default {
+  margin: 0;
+}
+
 .btn-margin {
   margin: 7px 3px;
+}
+
+.landing {
+  height: 100%;
+  width: 100% !important;
+  margin: 0 !important;
+}
+
+.landing .history-container {
+  background: #ccc;
+  padding: 20px !important;
+}
+
+.landing .welcome-container {
+  padding: 60px !important;
 }
 
 .landing .history {

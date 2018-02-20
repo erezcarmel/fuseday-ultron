@@ -16,9 +16,15 @@ jobs:
       before_install:
         - echo "install dependencies"
       install: npm install
-#       before_script:
-#         - echo "building package"
-#       script: yarn build
-#
-#     - stage: deploy to S3
-#       script: echo "TODO: deployment"
+      before_script:
+        - echo "building package"
+      script: npm build
+
+    - stage: deploy to S3
+      deploy:
+        skip_cleanup: true
+        provider: s3
+        access_key_id: "$AWS_S3_KEY"
+        secret_access_key: "$AWS_S3_ACCESS_KEY"
+        bucket: "fuse-ultron"
+        region: "ap-northeast-2"
