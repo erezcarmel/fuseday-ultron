@@ -9,7 +9,7 @@ class Answers extends Component {
 		return (
 			<Grid container className="answers" justify="center">
 				{
-					this.props.options.map(item =>
+					Object.keys(this.props.options).map(item =>
 						<Grid key={item.text} item>
 							<Button variant="raised" color="default" size="large" className="answer-btn" onClick={this.props.onClick}>
 								{ item.text }

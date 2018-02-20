@@ -8,13 +8,13 @@ class History extends Component {
 	render() {
 		return (
 			<Grid container className="history">
+				{ this.props.data.length === 0 && 'No history'}
 				<List component="nav">
-					<ListItem>
-						<ListItemText primary="Quiz 1"/>
-					</ListItem>
-					<ListItem>
-						<ListItemText primary="Quiz 2"/>
-					</ListItem>
+					{this.props.data.map(quiz =>
+						<ListItem>
+							<ListItemText primary={`${quiz.name} ${quiz.score}`}/>
+						</ListItem>
+					)}
 				</List>
 			</Grid>
 		);
