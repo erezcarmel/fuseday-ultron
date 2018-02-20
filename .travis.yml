@@ -4,11 +4,8 @@ language: node_js
 node_js:
   - "node"
 
-cache: yarn
-
 before_install:
   - sudo apt install jq
-  - sudo apt install yarn
 
 env:
   - BUILD_VERSION="$(cat package.json | jq -r '.version')-${TRAVIS_BUILD_NUMBER}"
@@ -19,9 +16,9 @@ jobs:
       before_install:
         - echo "install dependencies"
       install: yarn install
-      before_script:
-        - echo "building package"
-      script: yarn build
-
-    - stage: deploy to S3
-      script: echo "TODO: deployment"
+#       before_script:
+#         - echo "building package"
+#       script: yarn build
+#
+#     - stage: deploy to S3
+#       script: echo "TODO: deployment"
