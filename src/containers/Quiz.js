@@ -2,6 +2,7 @@ import React  from 'react'
 import Question from '../components/Question';
 import Answers from '../components/Answers';
 import Grid from 'material-ui/Grid';
+import { submitAnswer } from '../services/api';
 
 export default class Landing extends React.Component {
 	constructor(props) {
@@ -29,7 +30,10 @@ export default class Landing extends React.Component {
 	}
 
 	clickHandler(e) {
-		console.log(e.target.textContent);
+		submitAnswer(e.target.textContent, { seconds: this.state.seconds })
+			.then(response => {
+				// next question
+			});
 	}
 
 	render() {
@@ -39,15 +43,10 @@ export default class Landing extends React.Component {
 					Seconds: {this.state.seconds}
 				</Grid>
 
-				<Question text="Hello World" />
+				<Question text={this.state.question.question} />
 
 				<Answers
-					options={[
-						{text: 'A'},
-						{text: 'B'},
-						{text: 'C'},
-						{text: 'D'}
-					]}
+					options={this.state.question.options}
 					onClick={this.clickHandler}
 				/>
 			</Grid>
