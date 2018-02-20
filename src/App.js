@@ -11,6 +11,8 @@ import Switch from 'material-ui/Switch';
 import { FormControlLabel, FormGroup } from 'material-ui/Form';
 import Menu, { MenuItem } from 'material-ui/Menu';
 
+import './App.css';
+
 const styles = {
   root: {
     flexGrow: 1,

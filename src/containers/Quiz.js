@@ -1,15 +1,17 @@
 import React  from 'react'
 import Question from '../components/Question';
 import Answers from '../components/Answers';
+import End from '../components/End';
 import Grid from 'material-ui/Grid';
-import { submitAnswer } from '../services/api';
+import { submitAnswer, getNextQuestion } from '../services/api';
 
 export default class Landing extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
 			seconds: 0,
-			question: props.question
+			question: {},
+			isDone: false
 		};
 
 		this.clickHandler.bind(this);
@@ -23,6 +25,19 @@ export default class Landing extends React.Component {
 
 	componentDidMount() {
 		this.interval = setInterval(() => this.tick(), 1000);
+
+		getNextQuestion(localStorage.getItem('quiz_id'))
+			.then(response => {
+				if (response.status === 'finished') {
+					this.setState({
+						isDown: true
+					})
+				} else {
+					this.setState({
+						question: response.question
+					})
+				}
+			});
 	}
 
 	componentWillUnmount() {
@@ -39,16 +54,20 @@ export default class Landing extends React.Component {
 	render() {
 		return (
 			<Grid container className="quiz" justify="center">
-				<Grid container justify="center">
-					Seconds: {this.state.seconds}
-				</Grid>
+				{ this.state.isDone && <End /> }
 
-				<Question text={this.state.question.question} />
+				{ !this.state.isDone && <div>
+						<Grid container justify="center">
+							Seconds: {this.state.seconds}
+						</Grid>
 
-				<Answers
-					options={this.state.question.options}
-					onClick={this.clickHandler}
-				/>
+						<Question text={this.state.question.question} />
+
+						<Answers
+							options={this.state.question.options}
+							onClick={this.clickHandler}
+						/>
+				</div>}
 			</Grid>
 		);
 	}
