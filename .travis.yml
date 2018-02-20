@@ -1,15 +1,13 @@
-# sudo: required
+sudo: required
 
 language: node_js
 node_js:
-#   - "node"
-#
-# cache: yarn
-#
-# before_install:
-#   - sudo apt install jq
-#   - sudo apt install yarn
-#
+  - "node"
+
+before_install:
+  - sudo apt install jq
+  - sudo apt install yarn
+
 # env:
 #   - BUILD_VERSION="$(cat package.json | jq -r '.version')-${TRAVIS_BUILD_NUMBER}"
 #
